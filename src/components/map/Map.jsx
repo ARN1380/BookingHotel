@@ -12,7 +12,6 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import useGeoLocation from "../../hooks/useGeoLocation";
 
 export default function Map({ locations }) {
-  
   const [mapCenter, setMapCenter] = useState(["50", "4"]);
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -30,7 +29,7 @@ export default function Map({ locations }) {
   } = useGeoLocation();
 
   useEffect(() => {
-    if (userPosition?.lat && userPosition?.lng) {    
+    if (userPosition?.lat && userPosition?.lng) {
       setMapCenter([userPosition.lat, userPosition.lng]);
     }
   }, [userPosition]);
@@ -50,7 +49,8 @@ export default function Map({ locations }) {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
         />
-        <DetectClick />
+        <AddBookmarkOnMap />
+
         <ChangeCenter position={mapCenter} />
         {locations.map((hotel) => {
           return (
@@ -80,10 +80,30 @@ function ChangeCenter({ position }) {
   return null;
 }
 
-function DetectClick() {
+function AddBookmarkOnMap() {
   const navigate = useNavigate();
+  const [latlng, setLatlng] = useState({});
   useMapEvent({
-    click: (e) => navigate(`/bookmark?lat=${e.latlng.lat}&lat=${e.latlng.lng}`),
+    click: (e) => {
+      setLatlng(e.latlng);
+      navigate(`/bookmark?lat=${e.latlng.lat}&lng=${e.latlng.lng}`);
+    },
   });
-  return null;
+  
+  function name(params) {
+    navigate(`add?lat=${latlng.lat}&lng=${latlng.lng}`);
+  }
+  return (
+    <>
+      {latlng.lat && (
+        <Marker position={[latlng.lat, latlng.lng]}>
+          <Popup>
+            <div className="flex flex-col items-center justify-center">
+              <button className="rounded-md px-2 py-1 bg-purple-600 text-white font-bold" onClick={name}>add bookmark</button>
+            </div>
+          </Popup>
+        </Marker>
+      )}
+    </>
+  );
 }

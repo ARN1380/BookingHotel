@@ -1368,6 +1368,69 @@
       "longitude": "67.78003711374224",
       "host_location": "Baba Kot Pakistan",
       "id": 8
+    },
+    {
+      "cityName": "Great Yarmouth",
+      "countryName": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "countryCode": "GB",
+      "latitude": "52.59762590081691",
+      "longitude": "1.636962890625",
+      "host_location": "Great Yarmouth United Kingdom of Great Britain and Northern Ireland (the)",
+      "id": ":r3:"
+    },
+    {
+      "cityName": "Fermanagh and Omagh",
+      "countryName": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "countryCode": "GB",
+      "latitude": "54.688915654883246",
+      "longitude": "-7.108154296875001",
+      "host_location": "Fermanagh and Omagh United Kingdom of Great Britain and Northern Ireland (the)",
+      "id": ":r5:"
+    },
+    {
+      "cityName": "Rocquigny",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "50.01671579522569",
+      "longitude": "3.9591979980468754",
+      "host_location": "Rocquigny France",
+      "id": ":r1:"
+    },
+    {
+      "cityName": "Rocquigny",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "50.011200306853894",
+      "longitude": "3.9768791198730473",
+      "host_location": "Rocquigny France",
+      "id": "21449e47-f271-4c27-83c2-09c771730b57"
+    },
+    {
+      "cityName": "Kargasok",
+      "countryName": "Russian Federation (the)",
+      "countryCode": "RU",
+      "latitude": "59.31076795603884",
+      "longitude": "78.75000000000001",
+      "host_location": "Kargasok Russian Federation (the)",
+      "id": "6d5945c6-20bf-4809-8cbf-f9eb1c3daa3d"
+    },
+    {
+      "cityName": "Mahidasht",
+      "countryName": "Iran (Islamic Republic of)",
+      "countryCode": "IR",
+      "latitude": "34.37806559878154",
+      "longitude": "46.7519760131836",
+      "host_location": "Mahidasht Iran (Islamic Republic of)",
+      "id": "80e9339c-4a4d-4c82-a7f0-7d37e08bff6c"
+    },
+    {
+      "cityName": "Wignehies",
+      "countryName": "France",
+      "countryCode": "FR",
+      "latitude": "50.00800103352539",
+      "longitude": "3.99679183959961",
+      "host_location": "Wignehies France",
+      "id": "03df07fe-a7bc-4a51-9ce9-0bdef7cbd12a"
     }
   ]
 }

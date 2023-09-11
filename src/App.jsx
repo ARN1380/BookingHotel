@@ -11,6 +11,8 @@ import Provider from "./components/Provider/Provider";
 import SingleHotel from "./components/HotelsList/SingleHotel";
 import BookmarkLayout from "./components/BookmarkLayout/BookmarkLayout";
 import BookmarkList from "./components/Bookmark/BookmarkList";
+import SingleBookmark from "./components/Bookmark/SingleBookmark";
+import AddBookmarks from "./components/Bookmark/AddBookmarks";
 
 function App() {
   return (
@@ -26,7 +28,8 @@ function App() {
           </Route>
           <Route path="/bookmark" element={<BookmarkLayout />}>
             <Route index element={<BookmarkList />} />
-            <Route path="add" element={<div>bookmark ADD</div>} />
+            <Route path=":id" element={<SingleBookmark />} />
+            <Route path="add" element={<AddBookmarks /> } />
           </Route>
           {/* <Route path="/404" element={<ErrorPage />} />
           <Route path="*" element={<Navigate to="/404" />} /> */}
