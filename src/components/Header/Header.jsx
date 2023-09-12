@@ -36,8 +36,8 @@ export default function Header() {
       };
     });
   };
-  useOutsideClick(dateRef, "dateDropDown", () => setOpenDate(false));
-
+  useOutsideClick(dateRef, "dateDropDown", () => setOpenDate(false)); 
+  
   const navigate = useNavigate();
   const handleSearch = () => {
     const encodedParams = createSearchParams({

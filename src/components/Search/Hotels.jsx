@@ -5,7 +5,7 @@ import { useHotels } from "../context/HotelsProvider";
 export default function Hotels() {
   const [isLoading, data, currentHotel,current] = useHotels();
   if (isLoading) {
-    return <div>Loading ...</div>;
+    return <div>searching hotels ...</div>;
   }
 
   return (

@@ -17,9 +17,9 @@ import AddBookmarks from "./components/Bookmark/AddBookmarks";
 function App() {
   return (
     <div>
-      <Provider>
         <Toaster />
         <Header />
+      <Provider>
         <Routes>
           <Route path="/" element={<HotelsList />} />
           <Route path="/search" element={<SearchLayout />}>
