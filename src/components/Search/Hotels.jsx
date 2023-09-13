@@ -18,7 +18,7 @@ export default function Hotels() {
             to={`hotels/${hotel.id}?lat=${hotel.latitude}&lng=${hotel.longitude}`}
           >
             
-            <div className={`searchItem ${ hotel.id === current.id ? "bg-green-200 rounded-3xl" : ""}`}>
+            <div className={`searchItem ${ hotel.id === current.id ? "border border-solid border-purple-300 p-4 rounded-3xl" : ""}`}>
               <img src={hotel.picture_url.url} alt="" />
               <div className="searchItemDesc">
                 <p className="location">{hotel.smart_location}</p>

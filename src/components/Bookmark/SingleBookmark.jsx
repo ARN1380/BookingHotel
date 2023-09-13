@@ -5,14 +5,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesLeft } from "@fortawesome/free-solid-svg-icons";
 
 export default function SingleBookmark() {
-  const [bookmarks, addBookmark, getBookmark] = useBookmarks();
+  const [, , getBookmark] = useBookmarks();
   const bookmark = getBookmark(useParams().id);
   const navigator = useNavigate();
   return (
     <div>
       <button
+      
         onClick={() => {
-          navigator(-1);
+          navigator("/bookmark");
         }}
         className="border	border-slate-400 border-solid rounded-md flex space-x-1 items-center p-0.5 px-1"
       >

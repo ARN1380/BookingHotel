@@ -6,17 +6,23 @@ import {
   useMap,
   useMapEvent,
 } from "react-leaflet";
-import { useHotels } from "../context/HotelsProvider";
 import { useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import {
+  useLocation,
+  useNavigate,
+  useParams,
+  useSearchParams,
+} from "react-router-dom";
 import useGeoLocation from "../../hooks/useGeoLocation";
+import { useBookmarks } from "../context/BookmarksProvider";
 
 export default function Map({ locations }) {
   const [mapCenter, setMapCenter] = useState(["50", "4"]);
-
+  const [bookmarks] = useBookmarks();
   const [searchParams, setSearchParams] = useSearchParams();
   const latitude = searchParams.get("lat");
   const longitude = searchParams.get("lng");
+  const { pathname } = useLocation();
 
   useEffect(() => {
     if (latitude && longitude) setMapCenter([latitude, longitude]);
@@ -50,8 +56,8 @@ export default function Map({ locations }) {
           url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
         />
         <AddBookmarkOnMap />
-
         <ChangeCenter position={mapCenter} />
+        {pathname === "/bookmark" && latitude == null && <BookmarkBounds bookmarks={bookmarks} />}
         {locations.map((hotel) => {
           return (
             <Marker key={hotel.id} position={[hotel.latitude, hotel.longitude]}>
@@ -89,7 +95,7 @@ function AddBookmarkOnMap() {
       navigate(`/bookmark?lat=${e.latlng.lat}&lng=${e.latlng.lng}`);
     },
   });
-  
+
   function name(params) {
     navigate(`add?lat=${latlng.lat}&lng=${latlng.lng}`);
   }
@@ -97,13 +103,42 @@ function AddBookmarkOnMap() {
     <>
       {latlng.lat && (
         <Marker position={[latlng.lat, latlng.lng]}>
-          <Popup>
+          <Popup closeButton={closePopup}>
             <div className="flex flex-col items-center justify-center">
-              <button className="rounded-md px-2 py-1 bg-purple-600 text-white font-bold" onClick={name}>add bookmark</button>
+              <button
+                className="rounded-md px-2 py-1 bg-purple-600 text-white font-bold"
+                onClick={name}
+              >
+                add bookmark
+              </button>
             </div>
           </Popup>
         </Marker>
       )}
     </>
   );
+}
+
+function BookmarkBounds({ bookmarks }) {
+  const map = useMap();
+  const [bookmarksLatLng, setBookmarksLatLng] = useState([]);
+  useEffect(() => {
+    if (bookmarks) {
+      bookmarks.map((bookmark) => {
+        setBookmarksLatLng((prevState) => [
+          ...prevState,
+          [bookmark.latitude, bookmark.longitude],
+        ]);
+      });
+    }
+  }, []);
+
+  if (bookmarksLatLng[0]) {
+    map.fitBounds(bookmarksLatLng);
+  }
+}
+
+export function closePopup(params) {
+  
+  return true;
 }

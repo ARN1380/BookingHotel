@@ -1,12 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesLeft } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import usePost from "./../../hooks/usePost";
 import useFetch from "../../hooks/useFetch";
 import { useBookmarks } from "../context/BookmarksProvider";
 import { useEffect, useId, useState } from "react";
-import axios from "axios";
-import { toast } from "react-hot-toast";
 import {v4 as uuidv4} from 'uuid';
 
 
@@ -16,8 +13,6 @@ export default function AddBookmarks() {
   const [cityNameState, setCityNameState] = useState("");
   const [countryNameState, setCountryNameState] = useState("");
   const [bookmarks, addBookmark] = useBookmarks();
-
-
   const lat = searchParams.get("lat");
   const lng = searchParams.get("lng");
 
@@ -51,7 +46,7 @@ export default function AddBookmarks() {
     };
 
     addBookmark(newBookmark);
-    navigate("/bookmark")
+    navigate("/bookmark");
   }
 
   return (

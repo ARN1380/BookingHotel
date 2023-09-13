@@ -2,7 +2,7 @@ import { createContext, useContext, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 
-const hotelsContext = createContext();
+const HotelsContext = createContext();
 
 export default function HotelsProvider({ children }) {
   const [current, setCurrent] = useState({});
@@ -22,14 +22,14 @@ export default function HotelsProvider({ children }) {
     setCurrent(singleHotel);
   }
   return (
-    <hotelsContext.Provider
+    <HotelsContext.Provider
       value={[isLoading, data.data, currentHotel, current]}
     >
       {children}
-    </hotelsContext.Provider>
+    </HotelsContext.Provider>
   );
 }
 
 export function useHotels() {
-  return useContext(hotelsContext);
+  return useContext(HotelsContext);
 }
