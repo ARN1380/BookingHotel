@@ -6,7 +6,6 @@ import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRange } from "react-date-range";
 import { format } from "date-fns";
-import useFetch from "../../hooks/useFetch";
 import { createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
 
 export default function Header() {

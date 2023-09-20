@@ -11,7 +11,7 @@ export default function useFetch(url, query = "") {
     axios
       .get(`${url}?${query}`)
       .then((response) => {
-        setData(response);
+        setData(response.data);
       })
       .catch((err) => {
         toast.error(err.message);
@@ -19,5 +19,5 @@ export default function useFetch(url, query = "") {
       .finally(() => setIsLoading(false));
   }, [url, query]);
 
-  return [isLoading, data];
+  return {isLoading, data};
 }

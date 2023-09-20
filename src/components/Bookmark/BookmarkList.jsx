@@ -5,7 +5,7 @@ import { closePopup } from "../map/Map";
 import { HiTrash } from "react-icons/hi";
 
 export default function BookmarkList() {
-  const [bookmarks, , , deleteBookmark] = useBookmarks();
+  const {bookmarks, deleteBookmark} = useBookmarks();
 
   function handleBookmarkDelete(e, id) {
     e.preventDefault();

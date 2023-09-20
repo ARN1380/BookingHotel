@@ -18,7 +18,7 @@ import { useBookmarks } from "../context/BookmarksProvider";
 
 export default function Map({ locations }) {
   const [mapCenter, setMapCenter] = useState(["50", "4"]);
-  const [bookmarks] = useBookmarks();
+  const {bookmarks} = useBookmarks();
   const [searchParams, setSearchParams] = useSearchParams();
   const latitude = searchParams.get("lat");
   const longitude = searchParams.get("lng");

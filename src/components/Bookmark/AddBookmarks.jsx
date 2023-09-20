@@ -12,11 +12,11 @@ export default function AddBookmarks() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [cityNameState, setCityNameState] = useState("");
   const [countryNameState, setCountryNameState] = useState("");
-  const [bookmarks, addBookmark] = useBookmarks();
+  const {addBookmark} = useBookmarks();
   const lat = searchParams.get("lat");
   const lng = searchParams.get("lng");
 
-  const [isLoading, data] = useFetch(
+  const {isLoading, data} = useFetch(
     "https://api.bigdatacloud.net/data/reverse-geocode-client",
     `latitude=${lat}&longitude=${lng}`
   );
@@ -30,7 +30,7 @@ export default function AddBookmarks() {
 
   if (isLoading) return <div>Loading ...</div>;
 
-  const locationData = data.data;
+  const locationData = data;
 
   function handleSubmit(e) {
     e.preventDefault();

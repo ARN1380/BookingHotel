@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useBookmarks } from "../context/BookmarksProvider";
 
 export default function BookmarkLayout() {
-  const [bookmarks] = useBookmarks();
+  const {bookmarks} = useBookmarks();
   
   return (
     <div className="appLayout">

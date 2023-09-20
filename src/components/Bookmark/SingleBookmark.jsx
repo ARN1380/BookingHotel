@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesLeft } from "@fortawesome/free-solid-svg-icons";
 
 export default function SingleBookmark() {
-  const [, , getBookmark] = useBookmarks();
+  const {getBookmark} = useBookmarks();
   const bookmark = getBookmark(useParams().id);
   const navigator = useNavigate();
   return (

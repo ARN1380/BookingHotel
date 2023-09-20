@@ -7,9 +7,9 @@ const BookmarkContext = createContext();
 const BOOKMARK_URL = "http://localhost:5000/bookmarks"
 
 export default function BookmarksProvider({ children }) {
-  let [isLoading, data] = useFetch(BOOKMARK_URL);
-
+  let {isLoading, data: bookmarks} = useFetch(BOOKMARK_URL);
   if (isLoading) return <div>Loading...</div>;
+  
   
   function addBookmark(newBookmark) {
     axios
@@ -22,7 +22,7 @@ export default function BookmarksProvider({ children }) {
   }
 
   function getBookmark(id) {
-    const bookmark = data.data.find(
+    const bookmark = data.find(
       (bookmark) => bookmark.id.toString() === id
     );
 
@@ -38,7 +38,7 @@ export default function BookmarksProvider({ children }) {
   }
 
   return (
-    <BookmarkContext.Provider value={[data.data, addBookmark, getBookmark, deleteBookmark]}>
+    <BookmarkContext.Provider value={{bookmarks, addBookmark, getBookmark, deleteBookmark}}>
       {children}
     </BookmarkContext.Provider>
   );

@@ -1350,6 +1350,24 @@
       "longitude": "-18.281250000000004",
       "host_location": "Asahreppur Iceland",
       "id": "5d727a5a-efe2-4abb-b675-b006f3d5ce01"
+    },
+    {
+      "cityName": "Madrid",
+      "countryName": "Spain",
+      "countryCode": "ES",
+      "latitude": "40.44203171886548",
+      "longitude": "-3.708744049072266",
+      "host_location": "Madrid Spain",
+      "id": "5941a2a4-664b-49ac-b99a-1bb37ab85d20"
+    },
+    {
+      "cityName": "Amsterdam",
+      "countryName": "Netherlands (the)",
+      "countryCode": "NL",
+      "latitude": "52.407170860540624",
+      "longitude": "4.896984100341798",
+      "host_location": "Amsterdam Netherlands (the)",
+      "id": "9a53eb43-661a-4596-b38f-49da5f31bc2e"
     }
   ]
 }
