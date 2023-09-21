@@ -60,7 +60,7 @@ export default function AddBookmarks() {
             type="text"
             required
             value={cityNameState}
-            onChange={(e) => setCityName(e.target.value)}
+            onChange={(e) => setCityNameState(e.target.value)}
           />
         </div>
         <div className="flex flex-col mt-4">
@@ -70,7 +70,7 @@ export default function AddBookmarks() {
             type="text"
             required
             value={countryNameState}
-            onChange={(e) => setCountryName(e.target.value)}
+            onChange={(e) => setCountryNameState(e.target.value)}
           />
         </div>
         <div className="mt-5 flex justify-between">

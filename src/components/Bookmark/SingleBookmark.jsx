@@ -22,7 +22,7 @@ export default function SingleBookmark() {
       </button>
       <div className="flex flex-col items-center space-y-4 mt-4">
         <div className="flex space-x-4 items-center justify-center">
-          <h4 className="text-lg font-bold -mb-1">{bookmark.cityName}</h4>
+          <h4 className="text-lg font-bold -mb-1">{bookmark.cityName || ""}</h4>
           <div className="flex items-center space-x-1 mt-1">
             <ReactCountryFlag svg countryCode={bookmark.countryCode} />
             <p className="text-xs">{bookmark.country}</p>
