@@ -1,8 +1,15 @@
-# React + Vite
+# BookingHotel - Hotel Search & Booking App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BookingHotel is a modern React web application for browsing, searching, and bookmarking hotels.  
+It features an interactive map, a bookmark system, and a clean responsive design powered by Tailwind CSS.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Features
+- 🔍 **Hotel Search**: Browse available hotels with detailed information  
+- 📍 **Map Integration**: View hotel locations on an interactive map  
+- ⭐ **Bookmarking**: Save favorite hotels for quick access  
+- 📱 **Responsive UI**: Optimized for mobile, tablet, and desktop  
+- ⚡ **Fast Development**: Built with React, Vite, and TailwindCSS  
+- 🗄️ **Mock Backend**: Powered by `db.json` for local testing  
+
